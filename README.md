@@ -10,6 +10,62 @@ Weiter Informationen zum Protokoll:
 Leider war von Seiten der Fa. Hargassner mittels Anfrage an deren Support keine Unterstützung möglich.
 Ich wurde auf die freigegeben MODBUS Schnittstelle verwiesen, welche jedoch kostenplichtig ist.
 
+## Dekodierte Parameter
+
+- Puffer
+
+  - TemperaturOben ...in Grad Celsius
+  - TemperaturMitte ...in Grad Celsius
+  - TemperaturUnten ...in Grad Celsius
+  - Füllgrad ...in Prozen
+
+- Außentemperatur
+
+  - live ...aktuelle Außentemperatur
+  - gemittelt ...zeitlich gemittelte Außentemperatur
+
+- Allgemein
+  - Betriebszustand ... aktuell ist die Bedeutung noch nicht komplett klar
+  - Betriebsstunden
+    - Steuerung
+    - Heizung
+    - Zündung
+    - Saugzug
+    - Einschub
+    - Austragung
+  - Entaschung
+    - AnzahlKlein ...Anzahl der bereits durchgeführten kleinen Entaschungen
+    - AnzahlGroß ...Anzahl der bereits durchgeführten großen Entaschungen
+    - LaufzeitSeitEntaschung
+  - Standby ... boolscher Wert
+  - Füllstand ... boolscher Wert
+- Kessel
+
+  - IstTemp ... Temperatur in Grad
+  - SollTemp ... Temperatur in Grad
+  - Glutbett ... Temperatur in Grad
+  - RücklaufanhebungIst
+  - RücklaufanhebungSoll
+  - Unterdruck ... in Pascal
+  - O2Ist ... Ist Sauerstoffanteil im Abgas
+  - O2Soll ... Soll Sauerstoffanteil im Abgas
+  - RauchgasTemp ... Temperatur in Grad
+
+- Boiler 1/2
+
+  - Ist ... Temperatur in Grad
+  - Soll ... Temperatur in Grad
+  - Pumpe ... boolscher Wert Ein/Aus der Boilerpumpe
+
+- Heizkreis 1/2/3/4
+  - VorlaufSoll
+  - VorlaufIst
+  - RaumtemperaturSoll
+  - RaumtemperaturIst
+  - Pumpe ... boolscher Wert
+  - Mischer Auf ... boolscher Wert
+  - Mischer Zu ... boolscher Wert
+
 ## Installation
 
 Um dieses Packet zu Installieren reicht ein einfaches
