@@ -1,0 +1,20 @@
+{
+    "name": "hargassner_telnet_test",
+    "version": "1.0.0",
+    "description": "Test zum überprüfen der Funktion des Paketes hargassner_telnet",
+    "main": "TestWithIntegratedSocketServer.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [
+        "hargassner",
+        "telnet",
+        "test"
+    ],
+    "author": "Michael Grabenschweiger",
+    "license": "GPL-3.0",
+    "bugs": {
+        "url": "https://github.com/schuppenkarp/Hargassner_NodeJS_Adapter/issues"
+    },
+    "homepage": "https://github.com/schuppenkarp/Hargassner_NodeJS_Adapter#readme"
+}

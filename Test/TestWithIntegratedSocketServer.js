@@ -17,7 +17,7 @@ server.listen(23);
 
 
 
-var Hargassner = require("hargassnerTelnet");
+var Hargassner = require("hargassner_telnet");
 var Zentralheizung = new Hargassner({
     IP: "localhost",
     PORT: 23

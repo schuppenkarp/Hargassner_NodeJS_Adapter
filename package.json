@@ -1,23 +1,23 @@
 {
-  "name": "hargassner_telnet",
-  "version": "1.0.0",
-  "description": "Adapter zur Kommunikation mit einem Heizkessel des Herstellers 'Hargassner' und dessen Steuerung 'Touch Control' mittels der nicht (offiziell) dokumentierten und freigegebenen Telnet Schnittstelle direkt am Lan Anschluss des Touch-Panel der Steuerung ",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/schuppenkarp/Hargassner_NodeJS_Adapter.git"
-  },
-  "keywords": [
-    "hargassner",
-    "telnet"
-  ],
-  "author": "Michael Grabenschweiger",
-  "license": "GPL-3.0",
-  "bugs": {
-    "url": "https://github.com/schuppenkarp/Hargassner_NodeJS_Adapter/issues"
-  },
-  "homepage": "https://github.com/schuppenkarp/Hargassner_NodeJS_Adapter#readme"
+    "name": "hargassner_telnet",
+    "version": "1.0.4",
+    "description": "Adapter zur Kommunikation mit einem Heizkessel des Herstellers 'Hargassner' und dessen Steuerung 'Touch Control' mittels der nicht (offiziell) dokumentierten und freigegebenen Telnet Schnittstelle direkt am Lan Anschluss des Touch-Panel der Steuerung ",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/schuppenkarp/Hargassner_NodeJS_Adapter.git"
+    },
+    "keywords": [
+        "hargassner",
+        "telnet"
+    ],
+    "author": "Michael Grabenschweiger",
+    "license": "GPL-3.0",
+    "bugs": {
+        "url": "https://github.com/schuppenkarp/Hargassner_NodeJS_Adapter/issues"
+    },
+    "homepage": "https://github.com/schuppenkarp/Hargassner_NodeJS_Adapter#readme"
 }
