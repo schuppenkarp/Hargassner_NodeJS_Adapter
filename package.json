@@ -6,6 +6,9 @@
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1"
     },
+    "bin": {
+        "hgboiler": "./bin/hgboiler.js"
+    },
     "repository": {
         "type": "git",
         "url": "git+https://github.com/schuppenkarp/Hargassner_NodeJS_Adapter.git"
@@ -19,5 +22,8 @@
     "bugs": {
         "url": "https://github.com/schuppenkarp/Hargassner_NodeJS_Adapter/issues"
     },
-    "homepage": "https://github.com/schuppenkarp/Hargassner_NodeJS_Adapter#readme"
+    "homepage": "https://github.com/schuppenkarp/Hargassner_NodeJS_Adapter#readme",
+    "dependencies": {
+        "stdio": "^2.1.1"
+    }
 }
