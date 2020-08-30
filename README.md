@@ -88,7 +88,7 @@ npm install hargassner_telnet -g
 
 ## Verwendung
 
-Im Ordern ./Test ist ein Beispielsprojekt hinterlegt, welches dieses Paket nutzt und die Dekodierten Daten mittels Express Server zur Verfügung stellt.
+Im Ordern `./test` ist ein Beispielsprojekt hinterlegt, welches dieses Paket nutzt und die Dekodierten Daten mittels Express Server zur Verfügung stellt.
 Hierzu wird eine Hargassner-Steuerung Emuliert.
 Der Express Webserver ist unter localhost:3000 und somit am Port 3000 zu erreichen.
 
