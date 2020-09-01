@@ -127,7 +127,7 @@ Der TCP-Port `options.PORT` wird falls nicht explizit angegeben standardmässig 
 
 Beendet die Verbindung mit der Heizungssteuerung.
 
-### Methode parse(string)
+### Methode parse(array)
 
 Parst eine von der Heizung gelieferte Zeile Rohdaten und liefert dekodierte Parameter.
 
