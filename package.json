@@ -4,7 +4,11 @@
     "description": "Adapter zur Kommunikation mit einem Heizkessel des Herstellers 'Hargassner' und dessen Steuerung 'Touch Control' mittels der nicht (offiziell) dokumentierten und freigegebenen Telnet Schnittstelle direkt am Lan Anschluss des Touch-Panel der Steuerung ",
     "main": "index.js",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "test": "jest",
+        "lint": "eslint --fix {lib,bin}/*.js"
+    },
+    "bin": {
+        "hgboiler": "./bin/hgboiler.js"
     },
     "repository": {
         "type": "git",
@@ -19,5 +23,22 @@
     "bugs": {
         "url": "https://github.com/schuppenkarp/Hargassner_NodeJS_Adapter/issues"
     },
-    "homepage": "https://github.com/schuppenkarp/Hargassner_NodeJS_Adapter#readme"
+    "homepage": "https://github.com/schuppenkarp/Hargassner_NodeJS_Adapter#readme",
+    "pre-commit": [
+        "test",
+        "lint"
+    ],
+    "dependencies": {
+        "stdio": "^2.1.1"
+    },
+    "devDependencies": {
+        "eslint": "^7.8.0",
+        "eslint-config-standard": "^14.1.1",
+        "eslint-plugin-import": "^2.22.0",
+        "eslint-plugin-node": "^11.1.0",
+        "eslint-plugin-promise": "^4.2.1",
+        "eslint-plugin-standard": "^4.0.1",
+        "jest": "^26.4.2",
+        "pre-commit": "^1.2.2"
+    }
 }

@@ -88,15 +88,18 @@ npm install hargassner_telnet -g
 
 ## Verwendung
 
-Im Ordern ./Test ist ein Beispielsprojekt hinterlegt, welches dieses Paket nutzt und die Dekodierten Daten mittels Express Server zur Verfügung stellt.
+Das Paket beinhaltet das Kommandozeilenprogramm `hgboiler` um den aktuellen Stand des Heizkessels abzurufen.
+
+Im Ordern `./test` ist außerdem ein Beispielsprojekt hinterlegt, welches dieses Paket nutzt und die Dekodierten Daten mittels Express Server zur Verfügung stellt.
 Hierzu wird eine Hargassner-Steuerung Emuliert.
 Der Express Webserver ist unter localhost:3000 und somit am Port 3000 zu erreichen.
 
 Anzeige der empfangen RAW-Daten mittels http://localhost:3000/raw.
 Die Dekodierten Daten können direkt mittels http://localhost:3000/ angezeigt werden.
 
-##API
-###Example
+## API
+
+### Example
 
 ```javascript
 var Hargassner = require("hargassner_telnet");
@@ -124,7 +127,11 @@ Der TCP-Port `options.PORT` wird falls nicht explizit angegeben standardmässig 
 
 Beendet die Verbindung mit der Heizungssteuerung.
 
-###Event Hargassner.on
+### Methode parse(array)
+
+Parst eine von der Heizung gelieferte Zeile Rohdaten und liefert dekodierte Parameter.
+
+### Event Hargassner.on
 
 ```javascript
 Zentralheizung.on("data", data => {});
@@ -133,7 +140,7 @@ Zentralheizung.on("data", data => {});
 Erstellt einen Eventlistener auf das Event "on" welches bei dem neuen Empfangen Datensatz gefeuert wird.
 im Object data ist das bereits geparste Datenpaket der Heizungssteuerung enthalten.
 
-##Abhängigkeiten
+## Abhängigkeiten
 
 - net-Package, welche bereits in der Standardinstallation von NodeJS global installiert ist
 
@@ -147,5 +154,5 @@ Für die Testversion ist weiters das Paket
 Jegliches Interesse an der Unterstützung dieses Projektes ist jederzeit willkommen!
 Einfach melden michael@grabenschweiger.com
 
-##Lizenz
+## Lizenz
 Diese Projekt wird under der GPLv3-Lizenz veröffentlicht.

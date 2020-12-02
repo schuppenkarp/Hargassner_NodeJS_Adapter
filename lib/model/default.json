@@ -1,0 +1,93 @@
+{
+  "Allgemein": {
+    "Betriebszustand": 1,
+    "Betriebsstunden": {
+      "Steuerung": 157,
+      "Heizung": 158,
+      "Zuendung": 159,
+      "Saugzug": 160,
+      "Einschub": 113,
+      "Austragung": 161
+    },
+    "Entaschung": {
+      "AnzahlKlein": 166,
+      "AnzahlGross": 167,
+      "LaufzeitSeitEntaschung": 138
+    },
+    "Standby": [ 206, "0x0001" ],
+    "FuellstandOK": [ 206, "0x0002" ]
+  },
+  "Puffer": {
+    "TemperaturOben": 23,
+    "TemperaturMitte": 24,
+    "TemperaturUnten": 25,
+    "Fuellgrad": 201
+  },
+  "Aussentemperatur": {
+    "live": 21,
+    "gemittelt": 22
+  },
+  "Kessel": {
+    "O2Ist": 2,
+    "O2Soll": 3,
+    "IstTemp": 4,
+    "SollTemp": 5,
+    "Glutbett": 15,
+    "RuecklaufAnhebungIst": 27,
+    "RuecklaufAnhebungSoll": 28,
+    "RuecklaufPumpe": 29,
+    "Unterdruck": 14,
+    "RauchgasTemp": 6
+  },
+  "Boiler1": {
+    "Ist": 42,
+    "Soll": 43,
+    "Pumpe": [208, "0x0002"]
+  },
+  "Boiler2": {
+    "Ist": 50,
+    "Soll": 51,
+    "Pumpe": [208, "0x0004"]
+  },
+  "Heizkreis1": {
+    "VorlaufSoll": 38,
+    "VorlaufIst": 36,
+    "RaumtemperaturIst": 128,
+    "RaumtemperaturSoll": 40,
+    "Pumpe": [206, "0x0080"],
+    "Mischer": {
+      "Auf": [206, "0x0100"],
+      "Zu": [206, "0x0200"]
+    }
+  },
+  "Heizkreis2": {
+    "VorlaufSoll": 39,
+    "VorlaufIst": 37,
+    "RaumtemperaturIst": 129,
+    "RaumtemperaturSoll": 41,
+    "Pumpe": [206, "0x0400"],
+    "Mischer": {
+      "Auf": [206, "0x0800"],
+      "Zu": [206, "0x1000"]
+    }
+  },
+  "Heizkreis3": {
+    "VorlaufSoll": 46,
+    "VorlaufIst": 44,
+    "RaumtemperaturIst": 130,
+    "Pumpe": [209, "0x001"],
+    "Mischer": {
+      "Auf": [209, "0x0002"],
+      "Zu": [209, "0x0004"]
+    }
+  },
+  "Heizkreis4": {
+    "VorlaufSoll": 47,
+    "VorlaufIst": 45,
+    "Pumpe": [209, "0x0008"],
+    "Mischer": {
+      "Auf": [209, "0x0010"],
+      "Zu": [209, "0x0020"]
+    }
+  }
+}
