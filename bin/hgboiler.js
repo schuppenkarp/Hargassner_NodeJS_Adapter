@@ -16,7 +16,7 @@ heizung.connect({ quiet: 1 })
 
 heizung.on('data', data => {
   if (options.raw) {
-    console.log(heizung.raw.join(' '))
+    console.log(heizung.raw.join(' ').trim())
   } else {
     console.log(JSON.stringify(data))
   }
