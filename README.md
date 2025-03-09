@@ -1,14 +1,14 @@
 # Hargassner_NodeJS_Adapter
 
-Adapter zur Kommunikation mit einem Heizkessel des Herstellers 'Hargassner' und dessen Steuerung 'Touch Control' mittels der nicht (offiziell) dokumentierten und freigegebenen Telnet Schnittstelle direkt am Lan Anschluss des Touch-Panel der Steuerung.
+Adapter zur Kommunikation mit einem Heizkessel des Herstellers 'Hargassner' und dessen Steuerung 'Touch Control' mittels der nicht (offiziell) dokumentierten und freigegebenen Telnet Schnittstelle direkt am LAN Anschluss des Touch-Panel der Steuerung.
 
-Weiter Informationen zum Protokoll:
+Weitere Informationen zum Protokoll:
 
 1. https://www.mikrocontroller.net/topic/267831
 2. https://www.mikrocontroller.net/attachment/345852/Hargassner_Datenprotokoll_155_Pakete.pdf
 
 Leider war von Seiten der Fa. Hargassner mittels Anfrage an deren Support keine Unterstützung möglich.
-Ich wurde auf die freigegeben MODBUS Schnittstelle verwiesen, welche jedoch kostenplichtig ist.
+Ich wurde auf die freigegebene MODBUS Schnittstelle verwiesen, welche jedoch kostenplichtig ist.
 
 ## Dekodierte Parameter
 
@@ -17,7 +17,7 @@ Ich wurde auf die freigegeben MODBUS Schnittstelle verwiesen, welche jedoch kost
   - TemperaturOben ...in Grad Celsius
   - TemperaturMitte ...in Grad Celsius
   - TemperaturUnten ...in Grad Celsius
-  - Füllgrad ...in Prozen
+  - Füllgrad ...in Prozent
 
 - Außentemperatur
 
@@ -68,7 +68,7 @@ Ich wurde auf die freigegeben MODBUS Schnittstelle verwiesen, welche jedoch kost
 
 ## Installation
 
-Um dieses Packet zu Installieren reicht ein einfaches
+Um dieses Paket zu installieren reicht ein einfaches
 
 ```
 npm install hargassner_telnet
@@ -90,12 +90,12 @@ npm install hargassner_telnet -g
 
 Das Paket beinhaltet das Kommandozeilenprogramm `hgboiler` um den aktuellen Stand des Heizkessels abzurufen.
 
-Im Ordern `./test` ist außerdem ein Beispielsprojekt hinterlegt, welches dieses Paket nutzt und die Dekodierten Daten mittels Express Server zur Verfügung stellt.
-Hierzu wird eine Hargassner-Steuerung Emuliert.
+Im Ordner `./test` ist außerdem ein Beispielprojekt hinterlegt, welches dieses Paket nutzt und die dekodierten Daten mittels Express Webserver zur Verfügung stellt.
+Hierzu wird eine Hargassner-Steuerung emuliert.
 Der Express Webserver ist unter localhost:3000 und somit am Port 3000 zu erreichen.
 
 Anzeige der empfangen RAW-Daten mittels http://localhost:3000/raw.
-Die Dekodierten Daten können direkt mittels http://localhost:3000/ angezeigt werden.
+Die dekodierten Daten können direkt mittels http://localhost:3000/ angezeigt werden.
 
 ## API
 
@@ -142,12 +142,11 @@ im Object data ist das bereits geparste Datenpaket der Heizungssteuerung enthalt
 
 ## Abhängigkeiten
 
-- net-Package, welche bereits in der Standardinstallation von NodeJS global installiert ist
+- net-Package, welches bereits in der Standardinstallation von NodeJS global installiert ist
 
-Für die Testversion ist weiters das Paket
+Für die Testversion ist weiter das Paket
 
-- Express
-  notwendig.
+- Express notwendig.
 
 ## Unterstützung
 
@@ -155,4 +154,4 @@ Jegliches Interesse an der Unterstützung dieses Projektes ist jederzeit willkom
 Einfach melden michael@grabenschweiger.com
 
 ## Lizenz
-Diese Projekt wird under der GPLv3-Lizenz veröffentlicht.
+Diese Projekt wird unter der GPLv3-Lizenz veröffentlicht.
