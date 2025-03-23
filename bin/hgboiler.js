@@ -7,7 +7,10 @@ const options = getopt({
   ip: { description: 'IP address of the Hargassner boiler', args: 1, required: true },
   raw: { description: 'emit raw format instead of JSON' },
   model: { description: 'model name', args: 1, required: false, default: 'default' },
-  once: { description: 'emit one reading and exit' }
+  once: { description: 'emit one reading and exit' },
+  timestamps: { description: 'Log timestamp in returned data', required: false },
+  site: { description: 'Name of site where Hargassner is deployed', required: false},
+  endpoint: { description: 'Send data to public HTTP/HTTPS endpoint', required: false }
 })
 
 const heizung = new HargassnerTelnet({ IP: options.ip, model: options.model })
@@ -15,8 +18,19 @@ const heizung = new HargassnerTelnet({ IP: options.ip, model: options.model })
 heizung.connect({ quiet: 1 })
 
 heizung.on('data', data => {
+  if (options.timestamps) {
+    // Add local timestamp to data
+  }
+
+  if (options.site) {
+    // Add local site name to data
+  }
+
   if (options.raw) {
     console.log(heizung.raw.join(' ').trim())
+  } elif (options.endpoint) {
+    // Send to public HTTP/HTTPS endpoint
+    
   } else {
     console.log(JSON.stringify(data))
   }
