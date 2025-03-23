@@ -30,7 +30,7 @@ heizung.on('data', data => {
 
   if (options.raw) {
     console.log(heizung.raw.join(' ').trim())
-  } elif (options.endpoint) {
+  } else if (options.endpoint) {
     // Send to public HTTP/HTTPS endpoint
     console.log(data)
   } else {
