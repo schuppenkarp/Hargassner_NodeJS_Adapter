@@ -32,10 +32,11 @@ heizung.on('data', data => {
     console.log(heizung.raw.join(' ').trim())
   } elif (options.endpoint) {
     // Send to public HTTP/HTTPS endpoint
-    
+    console.log(data)
   } else {
     console.log(JSON.stringify(data))
   }
+
   if (options.once) {
     process.exit()
   }
