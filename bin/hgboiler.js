@@ -8,12 +8,13 @@ const options = getopt({
   raw: { description: 'emit raw format instead of JSON' },
   model: { description: 'model name', args: 1, required: false, default: 'default' },
   once: { description: 'emit one reading and exit' },
+  port: { description: 'Port of the Hargassner boiler', args: 1, required: false, default: 23 },
   timestamps: { description: 'Log timestamp in returned data', default: false, required: false },
   site: { description: 'Name of site where Hargassner is deployed', default: '', required: false},
   endpoint: { description: 'Send data to public HTTP/HTTPS endpoint', default: '', required: false }
 })
 
-const heizung = new HargassnerTelnet({ IP: options.ip, model: options.model })
+const heizung = new HargassnerTelnet({ IP: options.ip, PORT: options.port, model: options.model })
 
 heizung.connect({ quiet: 1 })
 
