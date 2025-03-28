@@ -56,8 +56,4 @@ jobs:
     - uses: actions/checkout@v4
     - run: npm install
     - run: echo "Test command line tool script"
-    - run: ls /usr
-    - run: ls /usr/bin
-    - run: ls /usr/local/
-    - run: ls /usr/local/bin
     - run: ./test/hgboiler-cli-test.bash
