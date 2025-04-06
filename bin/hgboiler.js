@@ -10,7 +10,7 @@ const options = getopt({
   once: { description: 'emit one reading and exit' },
   port: { description: 'Port of the Hargassner boiler', args: 1, required: false, default: 23 },
   timestamps: { description: 'Log timestamp in returned data', default: false, required: false },
-  site: { description: 'Name of site where Hargassner is deployed', default: '', required: false },
+  site: { description: 'Name of site where Hargassner is deployed', args: 1, default: '', required: false },
   endpoint: { description: 'Send data to public HTTP/HTTPS endpoint', default: '', required: false }
 })
 
@@ -26,6 +26,7 @@ heizung.on('data', data => {
 
   if (options.site) {
     // Add local site name to data
+    console.log(options)
     data.site = options.site
   }
 
