@@ -159,8 +159,22 @@ im Object data ist das bereits geparste Datenpaket der Heizungssteuerung enthalt
 Zum Ausführen der Tests auf lokaler Ebene sind die folgenden Befehle notwendig:
 
 ```bash
-npm install
-npm test
+npm install eslint textlint
+npm run lint
+npx eslint index.js
+npx textlint README.md
+```
+
+### CI
+
+Die CI-Pipeline ist in der Datei `.github/workflows/ci.yaml` und wird bei jedem Push ausgeführt.
+
+## Test
+
+Um Änderungen am Program zu testen, ist es hilfreich einen `feature` Branch zu erstellen und diesen dann auf dem Zielsystem lokal ebenfalls auf dem `feature` Branch zu testen.
+Ist dieser Test erfolgreich sind die folgenden Befehle notwending um ein `Node.js`-Paket zu erstellen und dieses dann ebenfalls auf dem Zielsystem zu testen. Erst dann sollte der `feature` Branch in den `master` Branch integriert werden.
+
+```bash
 ```
 
 ## Unterstützung
