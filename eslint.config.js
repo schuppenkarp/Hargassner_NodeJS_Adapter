@@ -1,4 +1,4 @@
-const { defineConfig } = require("eslint-define-config");
+const { defineConfig } = require("eslint/config");
 
 module.exports = defineConfig({
   env: {
