@@ -165,6 +165,12 @@ npx eslint index.js
 npx textlint README.md
 ```
 
+Die Tests sind in der Datei `test/hgboiler-test.js` hinterlegt und können mit dem Befehl `npm test` ausgeführt werden. Hier wurden diese unter `Ubuntu 20.04` getestet.
+
+```bash
+npm test
+```
+
 ### CI
 
 Die CI-Pipeline ist in der Datei `.github/workflows/ci.yaml` und wird bei jedem Push ausgeführt.
