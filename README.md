@@ -1,11 +1,11 @@
 # Hargassner_NodeJS_Adapter
 
-Adapter zur Kommunikation mit einem Heizkessel des Herstellers 'Hargassner' und dessen Steuerung 'Touch Control' mittels der nicht (offiziell) dokumentierten und freigegebenen Telnet Schnittstelle direkt am LAN Anschluss des Touch-Panel der Steuerung.
+Adapter zur Kommunikation mit einem Heizkessel des Herstellers `Hargassner` und dessen Steuerung `Touch Control` mittels der nicht (offiziell) dokumentierten und freigegebenen Telnet Schnittstelle direkt am LAN Anschluss des Touch-Panel der Steuerung.
 
 Weitere Informationen zum Protokoll:
 
-1. https://www.mikrocontroller.net/topic/267831
-2. https://www.mikrocontroller.net/attachment/345852/Hargassner_Datenprotokoll_155_Pakete.pdf
+1. [Hargassner / Rennergy Touchtronic Netzwerkanbindung/Visualisierung](https://www.mikrocontroller.net/topic/267831)
+2. [Hargassner Datenprotokoll 155 Datenpakete](https://www.mikrocontroller.net/attachment/345852/Hargassner_Datenprotokoll_155_Pakete.pdf)
 
 Leider war von Seiten der Fa. Hargassner mittels Anfrage an deren Support keine Unterstützung möglich.
 Ich wurde auf die freigegebene MODBUS Schnittstelle verwiesen, welche jedoch kostenplichtig ist.
@@ -25,7 +25,7 @@ Ich wurde auf die freigegebene MODBUS Schnittstelle verwiesen, welche jedoch kos
   - gemittelt ...zeitlich gemittelte Außentemperatur
 
 - Allgemein
-  - Betriebszustand ... aktuell ist die Bedeutung noch nicht komplett klar
+  - Betriebszustand ...aktuell ist die Bedeutung noch nicht komplett klar
   - Betriebsstunden
     - Steuerung
     - Heizung
@@ -37,58 +37,64 @@ Ich wurde auf die freigegebene MODBUS Schnittstelle verwiesen, welche jedoch kos
     - AnzahlKlein ...Anzahl der bereits durchgeführten kleinen Entaschungen
     - AnzahlGroß ...Anzahl der bereits durchgeführten großen Entaschungen
     - LaufzeitSeitEntaschung
-  - Standby ... boolscher Wert
-  - Füllstand ... boolscher Wert
+  - Standby ...boolscher Wert
+  - Füllstand ...boolscher Wert
 - Kessel
 
-  - IstTemp ... Temperatur in Grad
-  - SollTemp ... Temperatur in Grad
-  - Glutbett ... Temperatur in Grad
+  - IstTemp ...Temperatur in Grad
+  - SollTemp ...Temperatur in Grad
+  - Glutbett ...Temperatur in Grad
   - RücklaufanhebungIst
   - RücklaufanhebungSoll
-  - Unterdruck ... in Pascal
-  - O2Ist ... Ist Sauerstoffanteil im Abgas
-  - O2Soll ... Soll Sauerstoffanteil im Abgas
-  - RauchgasTemp ... Temperatur in Grad
+  - Unterdruck ...in Pascal
+  - O2Ist ...Ist Sauerstoffanteil im Abgas
+  - O2Soll ...Soll Sauerstoffanteil im Abgas
+  - RauchgasTemp ...Temperatur in Grad
 
 - Boiler 1/2
 
-  - Ist ... Temperatur in Grad
-  - Soll ... Temperatur in Grad
-  - Pumpe ... boolscher Wert Ein/Aus der Boilerpumpe
+  - Ist ...Temperatur in Grad
+  - Soll ...Temperatur in Grad
+  - Pumpe ...boolscher Wert Ein/Aus der Boilerpumpe
 
 - Heizkreis 1/2/3/4
   - VorlaufSoll
   - VorlaufIst
   - RaumtemperaturSoll
   - RaumtemperaturIst
-  - Pumpe ... boolscher Wert
-  - Mischer Auf ... boolscher Wert
-  - Mischer Zu ... boolscher Wert
+  - Pumpe ...boolscher Wert
+  - Mischer Auf ...boolscher Wert
+  - Mischer Zu ...boolscher Wert
 
 ## Installation
 
-Um dieses Paket zu installieren reicht ein einfaches
+Um dieses Paket unter Linux basierten Betriebssystemen zu installieren reicht ein einfaches:
 
-```
+```bash
 npm install hargassner_telnet
 ```
 
-Um die Installation gleich mit der aktuellen Version in ihrer package.json Datei als Required-Package einzutragen:
+Um die Installation gleich mit der aktuellen Version in Ihrer `package.json` Datei als Required-Package einzutragen:
 
-```
+```bash
 npm install hargassner_telnet --save
 ```
 
-Um das Packet Global zu installieren
+Um das Paket global zu installieren:
 
-```
+```bash
 npm install hargassner_telnet -g
 ```
 
 ## Verwendung
 
-Das Paket beinhaltet das Kommandozeilenprogramm `hgboiler` um den aktuellen Stand des Heizkessels abzurufen.
+Das Paket beinhaltet das Kommandozeilenprogramm `hgboiler` um den aktuellen Stand des Heizkessels abzurufen. Dieses kann dementsprechend zusammen mit den Parametern aufgerufen werden.
+Im Testskript `test/hgboiler-cli-test.bash` wird dies über die CI-Pipeline auch automatisiert getestet.
+
+```bash
+hgboiler --ip <IP-Adresse> --port <Port>
+./bin/hgboiler.js --ip 192.168.2.57 --once=1 --endpoint hof.moaxn.bayern/ofen --timestamps true --site allmoning
+```
 
 Im Ordner `./test` ist außerdem ein Beispielprojekt hinterlegt, welches dieses Paket nutzt und die dekodierten Daten mittels Express Webserver zur Verfügung stellt.
 Hierzu wird eine Hargassner-Steuerung emuliert.
@@ -99,7 +105,7 @@ Die dekodierten Daten können direkt mittels http://localhost:3000/ angezeigt we
 
 ## API
 
-### Example
+### Beispiel
 
 ```javascript
 var Hargassner = require("hargassner_telnet");
@@ -142,11 +148,20 @@ im Object data ist das bereits geparste Datenpaket der Heizungssteuerung enthalt
 
 ## Abhängigkeiten
 
-- net-Package, welches bereits in der Standardinstallation von NodeJS global installiert ist
+- **net**-Package, welches bereits in der Standardinstallation von NodeJS global installiert ist
 
-Für die Testversion ist weiter das Paket
+- Für die Testversion ist weiter das **express**-Package notwendig.
 
-- Express notwendig.
+## Entwicklung
+
+### Lokal
+
+Zum Ausführen der Tests auf lokaler Ebene sind die folgenden Befehle notwendig:
+
+```bash
+npm install
+npm test
+```
 
 ## Unterstützung
 

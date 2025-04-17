@@ -4,7 +4,11 @@ node -e "require('./test/mockserver.js').start(1025, () => console.log('Mock ser
 sleep 2
 
 echo "Running tests..."
-node ./bin/hgboiler.js --ip 0.0.0.0 --port 1025 --once true --site Oimading
+node ./bin/hgboiler.js --ip 0.0.0.0 --port 1025 --once true --site TestOrt --timestamps true
 
 echo "Stopping mock server..."
 kill $MOCK_SERVER_PID
+
+echo "Test timestamp value"
+
+echo "Test site name"
