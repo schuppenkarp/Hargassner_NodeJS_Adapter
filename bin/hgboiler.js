@@ -23,7 +23,7 @@ heizung.connect({ quiet: 1 })
 heizung.on('data', data => {
   if (options.timestamps) {
     // Add local timestamp to data
-    data.timestamp = Date.now()
+    data.timestamp = Math.round(new Date().getTime()/1000)
   }
 
   if (options.site) {
