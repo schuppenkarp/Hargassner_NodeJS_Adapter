@@ -64,5 +64,6 @@ jobs:
     - run: npm pack
     - run: tar -xvf hargassner_telnet-*.tgz
     - run: cd package
-    - run: ls
+    - run: ls -la
     - run: npm link
+    - run: hgboiler --ip localhost --once=1 --endpoint --timestamps true --site testing
