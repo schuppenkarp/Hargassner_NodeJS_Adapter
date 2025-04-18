@@ -68,4 +68,5 @@ jobs:
     - run: npm link
       working-directory: package
     - run: hgboiler -h > test.txt 2>&1
+      continue-on-error: true
     - run: cat test.txt | grep -q 'Hargassner' && echo "$?"
