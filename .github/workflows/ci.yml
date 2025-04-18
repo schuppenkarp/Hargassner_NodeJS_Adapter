@@ -67,4 +67,5 @@ jobs:
     - run: echo "Install package locally"
     - run: npm link
       working-directory: package
-    - run: hgboiler --ip localhost --site testing --once true
+    - run: hgboiler -h > test.txt 2>&1
+    - run: cat test.txt | grep -q 'Hargassner' && echo "$?"
