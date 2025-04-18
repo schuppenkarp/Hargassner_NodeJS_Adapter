@@ -62,8 +62,6 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - run: npm pack
-    - run: mv ./hargassner_telnet-*.tgz ../
-    - run: cd ..
     - run: ls
     - run: tar -xvf hargassner_telnet-*.tgz
     - run: cd package
