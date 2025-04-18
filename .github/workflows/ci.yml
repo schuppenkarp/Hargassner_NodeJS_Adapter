@@ -64,6 +64,6 @@ jobs:
     - run: npm pack
     - run: mv ./hargassner_telnet-*.tgz /tmp
     - run: cd /tmp
-    - run: tar -xvf hargassner_telnet-1.2.0.tgz
+    - run: tar -xvf hargassner_telnet-*.tgz
     - run: cd package
     - run: npm link
