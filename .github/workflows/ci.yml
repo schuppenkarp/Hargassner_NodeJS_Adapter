@@ -16,7 +16,6 @@ jobs:
     - run: npx eslint index.js
     - run: npx textlint README.md
 
-
   unittest:
     runs-on: ubuntu-latest
     steps:
@@ -49,3 +48,25 @@ jobs:
       uses: actions/setup-node@v4
     - run: npm install
     - run: npm run build --if-present
+
+  functiontest:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - run: npm install
+    - run: echo "Test command line tool script"
+    - run: ./test/hgboiler-cli-test.bash
+
+  end2endtest:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - run: npm install
+    - run: npm pack
+    - run: tar -xvf hargassner_telnet-*.tgz
+    - run: echo "Install package locally"
+    - run: npm link
+      working-directory: package
+    - run: hgboiler -h > test.txt 2>&1
+      continue-on-error: true
+    - run: cat test.txt | grep -q 'Hargassner' && echo "$?"

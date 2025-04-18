@@ -1,21 +1,14 @@
-var net = require('net')
-
 // Mocks a Hargassner boiler with dummy data
-var server = net.createServer(function (client) {
-  client.setEncoding('utf-8')
-  client.setTimeout(10000)
+var server = require('./mockserver.js');
 
-  setInterval(() => {
-    // Unique dummy data from file
-    const cases = require('./cases.json')
-    var dat = cases[0]["raw"]
-    client.write(dat)
-  }, 500)
-})
-server.listen(23)
+// Start the mock server on port 1025
+server.start(23, () => {
+  console.log('Mock server is running on port 1025');
+});
 
 // Deploys Hargassner package against mock server
 var Hargassner = require('hargassner_telnet')
+// const Hargassner = require('../index.js') // Local test
 var Zentralheizung = new Hargassner({
   IP: 'localhost',
   PORT: 23
