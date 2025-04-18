@@ -61,9 +61,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
+    - run: npm install
     - run: npm pack
     - run: tar -xvf hargassner_telnet-*.tgz
     - run: echo "Install package locally"
+    - run: ls
+      working-directory: package
     - run: npm link
       working-directory: package
     - run: hgboiler -h
