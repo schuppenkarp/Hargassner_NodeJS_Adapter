@@ -16,7 +16,6 @@ jobs:
     - run: npx eslint index.js
     - run: npx textlint README.md
 
-
   unittest:
     runs-on: ubuntu-latest
     steps:
@@ -57,3 +56,14 @@ jobs:
     - run: npm install
     - run: echo "Test command line tool script"
     - run: ./test/hgboiler-cli-test.bash
+
+  end2endtest:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - run: npm pack
+    - run: mv ./hargassner_nodejs_adapter-*.tgz /tmp
+    - run: cd /tmp
+    - run: tar -xvf hargassner_telnet-1.2.0.tgz
+    - run: cd package
+    - run: npm link

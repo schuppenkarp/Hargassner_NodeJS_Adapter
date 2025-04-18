@@ -125,8 +125,7 @@ var DataObject = Zentralheizung.data; //Liefert die aktuellen Daten welche aus d
 
 ### Methode connect(options)
 
-Für die Methode `Hargassner.connect(options)` kann das Objekt `options` angegeben werden, wobei hier die beiden Subobjekte `IP` sowie `PORT` relevant sind.
-Die IP-Adresse `options.IP` wird falls nicht explizit angegeben standardmässig mittels `localhost` angenommen.
+Für die Methode `Hargassner.connect(options)` kann das Objekt `options` angegeben werden, wobei hier die die beiden Subobjekte `IP` und `PORT` relevant sind. Die IP-Adresse `options.IP` wird falls nicht explizit angegeben standardmässig als `localhost` angenommen.
 Der TCP-Port `options.PORT` wird falls nicht explizit angegeben standardmässig mittels `23` angenommen was dem Port für TELNET entspricht.
 
 ### Methode disconnect()
@@ -135,7 +134,7 @@ Beendet die Verbindung mit der Heizungssteuerung.
 
 ### Methode parse(array)
 
-Parst eine von der Heizung gelieferte Zeile Rohdaten und liefert dekodierte Parameter.
+Parst eine von der Heizung gelieferte Stringzeile als Rohdaten der dekodierten Parameter.
 
 ### Event Hargassner.on
 
@@ -144,12 +143,11 @@ Zentralheizung.on("data", data => {});
 ```
 
 Erstellt einen Eventlistener auf das Event "on" welches bei dem neuen Empfangen Datensatz gefeuert wird.
-im Object data ist das bereits geparste Datenpaket der Heizungssteuerung enthalten.
+im Objekt `data` ist das bereits geparste Datenpaket der Heizungssteuerung enthalten.
 
 ## Abhängigkeiten
 
 - **net**-Package, welches bereits in der Standardinstallation von NodeJS global installiert ist
-
 - Für die Testversion ist weiter das **express**-Package notwendig.
 
 ## Entwicklung
@@ -165,7 +163,7 @@ npx eslint index.js
 npx textlint README.md
 ```
 
-Die Tests sind in der Datei `test/hgboiler-test.js` hinterlegt und können mit dem Befehl `npm test` ausgeführt werden. Hier wurden diese unter `Ubuntu 20.04` getestet.
+Die Tests sind in der Datei `test/hgboiler-cli-test.js` hinterlegt und können mit dem Befehl `npm test` ausgeführt werden. Hier wurden diese unter `Ubuntu 20.04` und `node v22.14.0` getestet.
 
 ```bash
 npm test
@@ -178,9 +176,18 @@ Die CI-Pipeline ist in der Datei `.github/workflows/ci.yaml` und wird bei jedem 
 ## Test
 
 Um Änderungen am Program zu testen, ist es hilfreich einen `feature` Branch zu erstellen und diesen dann auf dem Zielsystem lokal ebenfalls auf dem `feature` Branch zu testen.
-Ist dieser Test erfolgreich sind die folgenden Befehle notwending um ein `Node.js`-Paket zu erstellen und dieses dann ebenfalls auf dem Zielsystem zu testen. Erst dann sollte der `feature` Branch in den `master` Branch integriert werden.
+Ist dieser Test erfolgreich sind die folgenden Befehle notwending um ein `Node.js`-Paket zu erstellen und dieses dann ebenfalls auf dem Zielsystem zu testen. Erst dann sollte der `feature` Branch in den `master` Branch integriert werden. Ein Ende-zu-Ende-Test wurde auf einem Raspberry Pi `Linux raspberrypi 5.10.103-v7l+`, node `v19.9.0` und npm `9.6.3` durchgeführt.
 
 ```bash
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+nvm install 19
+npm pack
+mv hargassner_telnet-<major.minor.patch>.tgz /tmp
+cd /tmp
+tar -xvf hargassner_telnet-<major.minor.patch>.tgz
+cd package
+npm link
+hgboiler --ip <boiler-ip-adress> --once=1 --endpoint <url/path> --timestamps true --site <your-personale-site-name>
 ```
 
 ## Unterstützung
