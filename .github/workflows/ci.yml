@@ -66,4 +66,5 @@ jobs:
     - run: cd package
     - run: ls -la
     - run: npm link
-    - run: hgboiler --ip localhost --once=1 --endpoint --timestamps true --site testing
+    - run: ls -la
+    - run: hgboiler -h
