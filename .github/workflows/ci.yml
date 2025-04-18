@@ -63,8 +63,7 @@ jobs:
     - uses: actions/checkout@v4
     - run: npm pack
     - run: tar -xvf hargassner_telnet-*.tgz
-    - run: cd package
+    - run: cd ./package
     - run: ls -la
     - run: npm link
-    - run: ls -la
     - run: hgboiler -h
