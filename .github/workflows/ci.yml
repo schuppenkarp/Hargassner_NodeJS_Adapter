@@ -63,7 +63,7 @@ jobs:
     - uses: actions/checkout@v4
     - run: npm pack
     - run: tar -xvf hargassner_telnet-*.tgz
-    - run: cd ./package
-    - run: ls -la
+    - run: echo "Install package locally"
     - run: npm link
+      working-directory: package
     - run: hgboiler -h
