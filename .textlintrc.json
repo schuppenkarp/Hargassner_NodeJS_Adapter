@@ -1,0 +1,19 @@
+{
+  "plugins": {},
+  "filters": {
+    "allowlist": {
+      "allow": [
+        "http://localhost:3000/",
+        "http://localhost:3000/raw"
+      ]
+    }
+  },
+  "rules": {
+    "alive-link": true,
+    "doubled-spaces": true,
+    "no-empty-section": true,
+    "no-start-duplicated-conjunction": true,
+    "no-todo": true,
+    "no-zero-width-spaces": true
+  }
+}

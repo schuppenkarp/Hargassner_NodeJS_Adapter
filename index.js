@@ -4,6 +4,6 @@
  * GPLv3.0 Licensed
  */
 
-'use strict';
+'use strict'
 
-module.exports = require('./lib/hargassnerTelnet');
+module.exports = require('./lib/hargassnerTelnet')
